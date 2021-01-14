@@ -1,4 +1,4 @@
-<p align="center"><img src="https://genshin-card.getloli.com/2/160596100.png" alt="genshin-impact-card"></p>
+<p align="center"><img src="https://genshin-card.getloli.com/detail/2/160596100.png" alt="genshin-impact-card"></p>
 
 # genshin-impact-card
 
@@ -8,17 +8,17 @@ Genshin Impact user info card generator.
 <details>
 <summary>All Themes</summary>
 
-![](https://genshin-card.getloli.com/0/160596100.png)
-![](https://genshin-card.getloli.com/1/160596100.png)
-![](https://genshin-card.getloli.com/2/160596100.png)
-![](https://genshin-card.getloli.com/3/160596100.png)
-![](https://genshin-card.getloli.com/4/160596100.png)
-![](https://genshin-card.getloli.com/5/160596100.png)
-![](https://genshin-card.getloli.com/6/160596100.png)
-![](https://genshin-card.getloli.com/7/160596100.png)
-![](https://genshin-card.getloli.com/8/160596100.png)
-![](https://genshin-card.getloli.com/9/160596100.png)
-![](https://genshin-card.getloli.com/10/160596100.png)</details>
+![](https://genshin-card.getloli.com/detail/0/160596100.png)
+![](https://genshin-card.getloli.com/detail/1/160596100.png)
+![](https://genshin-card.getloli.com/detail/2/160596100.png)
+![](https://genshin-card.getloli.com/detail/3/160596100.png)
+![](https://genshin-card.getloli.com/detail/4/160596100.png)
+![](https://genshin-card.getloli.com/detail/5/160596100.png)
+![](https://genshin-card.getloli.com/detail/6/160596100.png)
+![](https://genshin-card.getloli.com/detail/7/160596100.png)
+![](https://genshin-card.getloli.com/detail/8/160596100.png)
+![](https://genshin-card.getloli.com/detail/9/160596100.png)
+![](https://genshin-card.getloli.com/detail/10/160596100.png)</details>
 
 ## Demo
 [https://genshin-card.getloli.com](https://genshin-card.getloli.com)
