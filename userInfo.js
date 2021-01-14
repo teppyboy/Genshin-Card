@@ -23,6 +23,9 @@ const HEADERS = {
   'DS': ''
 }
 
+const MY_UID = process.env.MY_UID
+const COOKIE_PRIVATE = process.env.COOKIE_PRIVATE
+
 const getDS = () => {
   // v2.3.0-web
   n = 'h8w582wxwgqvahcdkpvdhbh2w9casgfl'
@@ -49,6 +52,7 @@ const getRoleInfo = (uid) => {
         qs: { uid },
         headers: {
           ...HEADERS,
+          'Cookie': uid===MY_UID ? COOKIE_PRIVATE : HEADERS.Cookie,
           'DS': getDS()
         }
       })
@@ -114,6 +118,7 @@ const userInfo = ({uid, detail=false}) => {
               },
               headers: {
                 ...HEADERS,
+                'Cookie': uid===MY_UID ? COOKIE_PRIVATE : HEADERS.Cookie,
                 'DS': getDS()
               }
             })
