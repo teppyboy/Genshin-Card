@@ -62,6 +62,12 @@ $ export COOKIE="Your mihoyo BBS Cookie Here"
 $ yarn serve
 ```
 
+#### 自建图文指南
+
+*   By [BlueSkyXN](https://github.com/BlueSkyXN/Genshin-card)
+*   [Genshin-card 原神玩家信息小卡片生成器自建指南](https://www.blueskyxn.com/202102/4008.html)
+
+
 ## Credits
 
 *   [repl.it](https://repl.it/)
