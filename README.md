@@ -35,6 +35,19 @@ Genshin Impact user info card generator.
 ![](https://genshin-card.getloli.com/detail/24/160596100.png)
 ![](https://genshin-card.getloli.com/detail/25/160596100.png)
 ![](https://genshin-card.getloli.com/detail/26/160596100.png)
+![](https://genshin-card.getloli.com/detail/27/160596100.png)
+![](https://genshin-card.getloli.com/detail/28/160596100.png)
+![](https://genshin-card.getloli.com/detail/29/160596100.png)
+![](https://genshin-card.getloli.com/detail/30/160596100.png)
+![](https://genshin-card.getloli.com/detail/31/160596100.png)
+![](https://genshin-card.getloli.com/detail/32/160596100.png)
+![](https://genshin-card.getloli.com/detail/33/160596100.png)
+![](https://genshin-card.getloli.com/detail/34/160596100.png)
+![](https://genshin-card.getloli.com/detail/35/160596100.png)
+![](https://genshin-card.getloli.com/detail/36/160596100.png)
+![](https://genshin-card.getloli.com/detail/37/160596100.png)
+![](https://genshin-card.getloli.com/detail/38/160596100.png)
+![](https://genshin-card.getloli.com/detail/39/160596100.png)
 </details>
 
 ## Demo
