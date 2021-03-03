@@ -36,8 +36,16 @@ html
     h5 Markdown
     code ![](https://genshin-card.getloli.com/{背景编号}/{米游社ID}.png)
 
+    h3 背景编号
+    h5 <code>rand</code> 随机背景
+    h5 指定随机范围
+    pre.
+      2,5,9 -> [2, 5, 9]
+      3-5 -> [3, 4, 5]
+      3-5,7,9,12-15 -> [3, 4, 5, 7, 9, 12, 13, 14, 15]
+
     h3 示例:
-    img(src="https://genshin-card.getloli.com/2/160596100.png" alt="示例图片")
+    img(src="https://genshin-card.getloli.com/rand/160596100.png" alt="示例图片")
 
     details
       summary(style='display: inline-block;', onclick='_evt_push("click", "normal", "more_theme")')
@@ -51,8 +59,8 @@ html
       summary(style='display: inline-block;', onclick='_evt_push("click", "normal", "more_theme")')
         h3(style='display: inline-block; cursor: pointer;') 所有背景
       p(style='margin: 0;') 替换地址中的背景编号为想要的即可（可以右键点击在新标签页打开查看图片地址）
-      p 目前共有<code>0 - 26</code>共 27 张背景图片
-      each _, i in Array(27)
+      p 目前共有<code>0 - 39</code>共 40 张背景图片
+      each _, i in Array(40)
         img(src='https://genshin-card.getloli.com/' + i + '/160596100.png')
 
     h3 Credits
