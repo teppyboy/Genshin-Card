@@ -21,7 +21,7 @@ const CACHE_10800 = 'max-age=10800'
 
 app.get('/:skin/:uid\.png', (req, res) => {
   const { skin, uid } = req.params
-  logger.info('收到请求 uid:%s, skin:%s', uid, skin)
+  logger.info('Request received: UID: %s, Skin: %s', uid, skin)
 
   userInfo({ uid })
     .then(data => {
@@ -46,7 +46,7 @@ app.get('/:skin/:uid\.png', (req, res) => {
 
 app.get('/detail/:skin/:uid\.png', (req, res) => {
   const { skin, uid } = req.params
-  logger.info('收到请求 uid:%s, skin:%s', uid, skin)
+  logger.info('Request received: UID: %s, Skin: %s', uid, skin)
 
   const detail = true
 

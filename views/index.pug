@@ -1,6 +1,6 @@
 html
   head
-    title='原神玩家信息卡片生成工具'
+    title='Genshin Player Card'
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='icon', type='image/png', href='favicon.png')
     link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css')
@@ -22,19 +22,19 @@ html
       }
 
   body
-    h3 使用方法:
+    h3 Instructions:
 
-    h5 SVG 地址
-    code https://genshin-card.getloli.com/{背景编号}/{米游社ID}.png
+    h5 Get a SVG image
+    code https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png
 
-    h5 Img 标签
-    code &lt;img src="https://genshin-card.getloli.com/{背景编号}/{米游社ID}.png" alt="genshin-card" />
+    h5 As a HTML &lt;img> object
+    code &lt;img src="https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png" alt="genshin-card" />
 
     h5 BBCode
-    code [img]https://genshin-card.getloli.com/{背景编号}/{米游社ID}.png[/img]
+    code [img]https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png[/img]
 
     h5 Markdown
-    code ![](https://genshin-card.getloli.com/{背景编号}/{米游社ID}.png)
+    code ![](https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png)
 
     h3 背景编号
     h5 <code>rand</code> 随机背景
@@ -53,15 +53,17 @@ html
 
       p 由于配额限制，带有探索度和宝箱数量的图片地址路由使用以下形式：
       code https://genshin-card.getloli.com/detail/{背景编号}/{米游社ID}.png
-      img(src="https://genshin-card.getloli.com/detail/4/160596100.png" alt="示例图片")
+      img(src="https://genshin-card.getloli.com/detail/42,51-56/160596100.png" alt="示例图片")
 
     details
       summary(style='display: inline-block;', onclick='_evt_push("click", "normal", "more_theme")')
         h3(style='display: inline-block; cursor: pointer;') 所有背景
       p(style='margin: 0;') 替换地址中的背景编号为想要的即可（可以右键点击在新标签页打开查看图片地址）
-      p 目前共有<code>0 - 39</code>共 40 张背景图片
-      each _, i in Array(40)
-        img(src='https://genshin-card.getloli.com/' + i + '/160596100.png')
+      p 目前共有<code>0 - 108</code>共 109 张背景图片
+      each _, i in Array(109)
+        div(class='perview-card')
+          span #{i}
+          img(class='lazy', data-src='https://genshin-card.getloli.com/' + i + '/160596100.png')
 
     h3 Credits
     ul
@@ -114,5 +116,29 @@ html
 
     iframe(src="https://chat.getloli.com/room/@genshin-impact-card?title=%E5%8E%9F%E7%A5%9E%E7%8E%A9%E5%AE%B6%E4%BF%A1%E6%81%AF%E5%8D%A1%E7%89%87%E7%9A%84%E7%95%99%E8%A8%80%E6%9D%BF", scrolling="no", frameborder="0", height="70%", width="26%", style="position: fixed;top: 2%;right: 5%;")
 
-    p.copy
-      a(href='https://github.com/journey-ad/genshin-impact-card', target='_blank', onclick='_evt_push("click", "normal", "go_github")') source code
+    p.copyright
+      a(href='https://replit.com/@journeyad/Genshin-Card', target='_blank', onclick='_evt_push("click", "normal", "view_sourcecode")') source code
+
+    script.
+      document.addEventListener("DOMContentLoaded", function() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+      
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+      
+          lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          // Possibly fall back to event handlers here
+        }
+      });

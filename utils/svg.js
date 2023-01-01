@@ -68,7 +68,7 @@ const txt2woff2 = text => {
           deflate: true
         }))
 
-      fontmin.run(function (err, files) {
+      fontmin.run(function(err, files) {
         if (err) {
           reject(err)
         }
@@ -311,6 +311,11 @@ const svg = async ({ data, skin = 0, detail = false }) => {
                 letter-spacing: -2px;
               }
 
+              .bottom .section .val .percent {
+                  font-size: 0.8em;
+                  margin-left: 2px;
+              }
+
               .bottom .section .desc {
                 font-size: 20px;
                 margin-top: 4px;
@@ -363,7 +368,7 @@ const svg = async ({ data, skin = 0, detail = false }) => {
                     <div class="desc">深境螺旋</div>
                   </div>
                   <div class="section world-exploration">
-                    <div class="val">{{world_exploration}}</div>
+                    <div class="val">{{world_exploration}}<span class="text percent">%</span></div>
                     <div class="desc">世界探索</div>
                   </div>
                 </div>

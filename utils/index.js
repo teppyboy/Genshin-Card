@@ -1,3 +1,5 @@
+const md5 = require('md5')
+
 const randomStr = (length) => {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -6,6 +8,33 @@ const randomStr = (length) => {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
    }
    return result;
+}
+
+const randomInt = (min, max) => {
+  // [min, max)
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+const getQueryParam = (data) => {
+	if ( data === undefined ) {
+		return "";
+	}
+	const arr = [];
+	for ( let key of Object.keys(data) ) {
+		arr.push( `${key}=${data[key]}` );
+	}
+	return arr.join("&");
+}
+
+const getDS = (query, body="") => {
+  // v2.11.1 - from app
+  const n = "xV8v4Qu54lUKrEYFZkJhB8cuOh9Asafs";
+  const i = Date.now() / 1000 | 0;
+  const r = randomInt(100001, 200000);
+  const q = getQueryParam(query);
+  const c = md5(`salt=${n}&t=${i}&r=${r}&b=${body}&q=${q}`);
+
+  return `${i},${r},${c}`;
 }
 
 const render = (template, context) => {
@@ -32,5 +61,6 @@ const render = (template, context) => {
 
 module.exports = {
   randomStr,
-  render
+  render,
+  getDS
 }
