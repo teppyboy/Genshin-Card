@@ -45,8 +45,7 @@ async function getPlayerCard(req, res, detail, format) {
             'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
         })
         const svgBuffer = Buffer.from(svgImage)
-        const pngImage = await sharp(svgBuffer)
-            .toBuffer()
+        const pngImage = await sharp(svgBuffer).toBuffer()
         console.log(pngImage)
         res.send(pngImage)
     } else if (format === 'svg') {
