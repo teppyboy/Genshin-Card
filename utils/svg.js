@@ -89,7 +89,7 @@ const txt2woff2 = (text) => {
     })
 }
 
-const svg = async ({ data, skin = 0, detail = false }) => {
+async function svg({ data, skin = 0, detail = false }) {
     // '2,5,9' -> [2, 5, 9]
     // '3-5' -> [3, 4, 5]
     // '3-5,7,9,12-15' -> [3, 4, 5, 7, 9, 12, 13, 14, 15]
@@ -119,9 +119,8 @@ const svg = async ({ data, skin = 0, detail = false }) => {
 
     const woff2 = await txt2woff2(data.nickname)
 
-    return new Promise((resolve, reject) => {
-        const tpl = `<?xml version="1.0" encoding="UTF-8"?>
-      <svg width="500" height="165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    const tpl = `<?xml version="1.0" encoding="UTF-8"?>
+      <svg id="gi-card" width="500" height="165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Genshin Impact User Card</title>
         <foreignObject width="1000" height="330" transform="scale(.5)">
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -380,8 +379,7 @@ const svg = async ({ data, skin = 0, detail = false }) => {
       </svg>
       `
 
-        resolve(util.render(tpl, data))
-    })
+    return util.render(tpl, data)
 }
 
 module.exports = svg

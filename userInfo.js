@@ -75,7 +75,7 @@ async function userInfo({ uid, detail = false }) {
     }
     const roleInfo = await getRoleInfo(uid)
     const { game_role_id, region } = roleInfo
-	logger.info(region)
+    logger.info(region)
     const params = { role_id: game_role_id, server: region }
 
     if (!detail) {
@@ -109,7 +109,7 @@ async function userInfo({ uid, detail = false }) {
             params: params,
             headers: {
                 ...HEADERS,
-                Cookie: HEADERS.Cookie
+                Cookie: HEADERS.Cookie,
             },
         })
     ).data

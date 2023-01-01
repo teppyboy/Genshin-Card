@@ -1,6 +1,7 @@
 const express = require('express')
 const compression = require('compression')
 const pino = require('pino')
+const sharp = require('sharp')
 const cache = require('./utils/cache')
 const userInfo = require('./userInfo')
 const svg = require('./utils/svg')
@@ -19,13 +20,14 @@ app.get('/', (req, res) => {
 const CACHE_0 = 'max-age=0, no-cache, no-store, must-revalidate'
 const CACHE_10800 = 'max-age=10800'
 
-async function _getPlayerCard(req, res, detail) {
+async function getPlayerCard(req, res, detail, format) {
     const { skin, uid } = req.params
     logger.info(
-        'Request received: UID: %s, Skin: %s, Detailed: %s',
+        'Request received: UID: %s, Skin: %s, Detailed: %s, Format: %s',
         uid,
         skin,
-        detail
+        detail,
+        format
     )
     try {
         var data = await userInfo({ uid, detail })
@@ -37,26 +39,39 @@ async function _getPlayerCard(req, res, detail) {
         return
     }
     const svgImage = await svg({ data, skin, detail })
-    res.set({
-        'content-type': 'image/svg+xml',
-        'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
-    })
-    res.send(svgImage)
+    if (format === 'png') {
+        res.set({
+            'content-type': 'image/png',
+            'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
+        })
+        const svgBuffer = Buffer.from(svgImage)
+        const pngImage = await sharp(svgBuffer)
+            .toBuffer()
+        console.log(pngImage)
+        res.send(pngImage)
+    } else if (format === 'svg') {
+        res.set({
+            'content-type': 'image/svg+xml',
+            'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
+        })
+        res.send(svgImage)
+    }
 }
 
-async function getPlayerCard(req, res) {
-    await _getPlayerCard(req, res, false)
-}
-
-async function getPlayerCardDetailed(req, res) {
-    await _getPlayerCard(req, res, true)
-}
-
-// app.get('/:skin/:uid.png', getPlayerCard)
-app.get('/:skin/:uid.svg', getPlayerCard)
+app.get(
+    '/:skin/:uid.png',
+    async (req, res) => await getPlayerCard(req, res, false, 'png')
+)
+app.get(
+    '/:skin/:uid.svg',
+    async (req, res) => await getPlayerCard(req, res, false, 'svg')
+)
 
 // app.get('/detail/:skin/:uid.png', getPlayerCardDetailed)
-app.get('/detail/:skin/:uid.svg', getPlayerCardDetailed)
+app.get(
+    '/detail/:skin/:uid.svg',
+    async (req, res) => await _getPlayerCard(req, res, true, 'svg')
+)
 
 app.get('/heart-beat', (_, res) => {
     res.set({
