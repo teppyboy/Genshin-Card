@@ -1,4 +1,4 @@
-<p align="center"><img src="https://genshin-card.getloli.com/detail/2/160596100.png" alt="genshin-impact-card"></p>
+<p align="center"><img src="https://genshin-card.tretrauit.repl.co/2/160596100.png" alt="genshin-impact-card"></p>
 
 # genshin-impact-card
 
@@ -70,8 +70,8 @@ Genshin Impact user info card generator.
 #### Deploying on your own server
 
 ```shell
-$ git clone https://github.com/journey-ad/genshin-impact-card.git
-$ cd genshin-impact-card
+$ git clone https://github.com/tretrauit/genshin-card
+$ cd genshin-card
 $ yarn install
 
 $ export COOKIE="Your mihoyo BBS Cookie Here"
