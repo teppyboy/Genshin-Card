@@ -5,36 +5,20 @@ html
     link(rel='icon', type='image/png', href='favicon.png')
     link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css')
     link(rel='stylesheet', href='style.css')
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(async, src='https://www.googletagmanager.com/gtag/js?id=G-KMMF9FTYBX')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-KMMF9FTYBX');
-
-      function _evt_push(type, category, label){
-        gtag('event', type, {
-          'event_category' : category,
-          'event_label' : label
-        });
-      }
-
   body
     h3 Instructions:
 
     h5 Get a SVG image
-    code https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png
+    code https://genshin-card.tretrauit.repl.co/{skin}/{hoyolab-id}.svg
 
     h5 As a HTML &lt;img> object
-    code &lt;img src="https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png" alt="genshin-card" />
+    code &lt;img src="https://genshin-card.tretrauit.repl.co/{skin}/{hoyolab-id}.svg" alt="genshin-card" />
 
     h5 BBCode
-    code [img]https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png[/img]
+    code [img]https://genshin-card.tretrauit.repl.co/{skin}/{hoyolab-id}.svg[/img]
 
     h5 Markdown
-    code ![](https://genshin-card.getloli.com/{skin}/{hoyolab-id}.png)
+    code ![](https://genshin-card.tretrauit.repl.co/{skin}/{hoyolab-id}.svg)
 
     h3 背景编号
     h5 <code>rand</code> 随机背景
@@ -45,25 +29,25 @@ html
       3-5,7,9,12-15 -> [3, 4, 5, 7, 9, 12, 13, 14, 15]
 
     h3 示例:
-    img(src="https://genshin-card.getloli.com/rand/160596100.png" alt="示例图片")
+    img(src="https://genshin-card.tretrauit.repl.co/rand/17111457.svg" alt="示例图片")
 
     details
-      summary(style='display: inline-block;', onclick='_evt_push("click", "normal", "more_theme")')
+      summary(style='display: inline-block;')
         h5(style='display: inline-block; cursor: pointer;') 探索度
 
       p 由于配额限制，带有探索度和宝箱数量的图片地址路由使用以下形式：
-      code https://genshin-card.getloli.com/detail/{背景编号}/{米游社ID}.png
-      img(src="https://genshin-card.getloli.com/detail/42,51-56/160596100.png" alt="示例图片")
+      code https://genshin-card.tretrauit.repl.co/detail/{背景编号}/{米游社ID}.png
+      img(src="https://genshin-card.tretrauit.repl.co/detail/42,51-56/17111457.svg" alt="示例图片")
 
     details
-      summary(style='display: inline-block;', onclick='_evt_push("click", "normal", "more_theme")')
+      summary(style='display: inline-block;')
         h3(style='display: inline-block; cursor: pointer;') 所有背景
       p(style='margin: 0;') 替换地址中的背景编号为想要的即可（可以右键点击在新标签页打开查看图片地址）
       p 目前共有<code>0 - 108</code>共 109 张背景图片
       each _, i in Array(109)
         div(class='perview-card')
           span #{i}
-          img(class='lazy', data-src='https://genshin-card.getloli.com/' + i + '/160596100.png')
+          img(class='lazy', data-src='https://genshin-card.tretrauit.repl.co/' + i + '/160596100.png')
 
     h3 Credits
     ul
@@ -89,12 +73,12 @@ html
 
     h3 Tool
     .tool
-      code https://genshin-card.getloli.com
-      input#bgIdx(type='text', value='0', style='display: inline-block; width: 40px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
+      code https://genshin-card.tretrauit.repl.co
+      input#bgIdx(type='text', value='0', style='display: inline-block; width: 60px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
       code /
-      input#uid(type='text', placeholder='米游社ID', style='display: inline-block; width: 120px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
-      code .png
-      button#get(style='margin: 10px 0;', onclick='_evt_push("click", "normal", "get_card")') Get
+      input#uid(type='text', placeholder='Hoyolab ID', style='display: inline-block; width: 120px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
+      code .svg
+      button#get(style='margin: 10px 0;') Get
       img#result(style='display: block;')
 
       script.
@@ -111,11 +95,11 @@ html
             return
           }
 
-          img.src = 'https://genshin-card.getloli.com/' + bgIdx + '/' + uid + '.png'
+          img.src = 'https://genshin-card.tretrauit.repl.co/' + bgIdx + '/' + uid + '.svg'
         })
-        
+
     p.copyright
-      a(href='https://replit.com/@journeyad/Genshin-Card', target='_blank', onclick='_evt_push("click", "normal", "view_sourcecode")') source code
+      a(href='https://replit.com/@tretrauit/Genshin-Card', target='_blank') source code
 
     script.
       document.addEventListener("DOMContentLoaded", function() {
