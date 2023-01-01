@@ -12,18 +12,19 @@
     "author": "journey-ad",
     "license": "MIT",
     "dependencies": {
+        "axios": "^1.2.2",
         "b3b": "0.0.1",
         "compression": "^1.7.4",
-        "express": "^4.17.1",
-        "fontmin": "^0.9.8",
+        "express": "^4.18.2",
+        "fontmin": "^0.9.9",
         "md5": "^2.3.0",
-        "mime-types": "^2.1.28",
+        "mime-types": "^2.1.35",
         "node-cache": "^5.1.2",
-        "pino": "^6.10.0",
-        "pug": "^3.0.0",
-        "request": "^2.88.2"
+        "pino": "^6.14.0",
+        "pug": "^3.0.2",
+        "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "pino-pretty": "^4.3.0"
+        "pino-pretty": "^4.8.0"
     }
 }

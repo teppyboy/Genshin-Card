@@ -355,23 +355,23 @@ const svg = async ({ data, skin = 0, detail = false }) => {
                 <div class="bottom">
                   <div class="section active-days">
                     <div class="val">{{active_day_number}}</div>
-                    <div class="desc">活跃天数</div>
+                    <div class="desc">Days Active</div>
                   </div>
                   <div class="section avatar-number">
                     <div class="val">{{avatar_number}}</div>
-                    <div class="desc">角色数量</div>
+                    <div class="desc">Characters</div>
                   </div>
                   <div class="section achievement-number">
                     <div class="val">{{achievement_number}}</div>
-                    <div class="desc">成就达成</div>
+                    <div class="desc">Achievements</div>
                   </div>
                   <div class="section spiral-abyss">
                     <div class="val">{{spiral_abyss}}</div>
-                    <div class="desc">深境螺旋</div>
+                    <div class="desc">Spiral Abyss</div>
                   </div>
                   <div class="section world-exploration">
                     <div class="val">{{world_exploration}}<span class="text percent">%</span></div>
-                    <div class="desc">世界探索</div>
+                    <div class="desc">World Exploration</div>
                   </div>
                 </div>
               </div>

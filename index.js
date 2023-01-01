@@ -19,55 +19,46 @@ app.get('/', (req, res) => {
 const CACHE_0 = 'max-age=0, no-cache, no-store, must-revalidate'
 const CACHE_10800 = 'max-age=10800'
 
-app.get('/:skin/:uid.png', (req, res) => {
+async function _getPlayerCard(req, res, detail) {
     const { skin, uid } = req.params
-    logger.info('Request received: UID: %s, Skin: %s', uid, skin)
-
-    userInfo({ uid })
-        .then((data) => {
-            svg({ data, skin }).then((svgImage) => {
-                res.set({
-                    'content-type': 'image/svg+xml',
-                    'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
-                })
-
-                res.send(svgImage)
-            })
+    logger.info(
+        'Request received: UID: %s, Skin: %s, Detailed: %s',
+        uid,
+        skin,
+        detail
+    )
+    try {
+        var data = await userInfo({ uid, detail })
+    } catch (err) {
+        res.json({
+            msg: err,
+            code: -1,
         })
-        .catch((err) => {
-            res.json({
-                msg: err,
-                code: -1,
-            })
-        })
-})
+        return
+    }
+    const svgImage = await svg({ data, skin, detail })
+    res.set({
+        'content-type': 'image/svg+xml',
+        'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
+    })
+    res.send(svgImage)
+}
 
-app.get('/detail/:skin/:uid.png', (req, res) => {
-    const { skin, uid } = req.params
-    logger.info('Request received: UID: %s, Skin: %s', uid, skin)
+async function getPlayerCard(req, res) {
+    await _getPlayerCard(req, res, false)
+}
 
-    const detail = true
+async function getPlayerCardDetailed(req, res) {
+    await _getPlayerCard(req, res, true)
+}
 
-    userInfo({ uid, detail })
-        .then((data) => {
-            svg({ data, skin, detail }).then((svgImage) => {
-                res.set({
-                    'content-type': 'image/svg+xml',
-                    'cache-control': isNaN(skin) ? CACHE_0 : CACHE_10800,
-                })
+// app.get('/:skin/:uid.png', getPlayerCard)
+app.get('/:skin/:uid.svg', getPlayerCard)
 
-                res.send(svgImage)
-            })
-        })
-        .catch((err) => {
-            res.json({
-                msg: err,
-                code: -1,
-            })
-        })
-})
+// app.get('/detail/:skin/:uid.png', getPlayerCardDetailed)
+app.get('/detail/:skin/:uid.svg', getPlayerCardDetailed)
 
-app.get('/heart-beat', (req, res) => {
+app.get('/heart-beat', (_, res) => {
     res.set({
         'cache-control': 'max-age=0, no-cache, no-store, must-revalidate',
     })

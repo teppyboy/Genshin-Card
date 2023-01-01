@@ -1,13 +1,12 @@
-const request = require('request')
+const axios = require('axios')
 
-function http(options) {
-    return new Promise((resolve, reject) => {
-        request(options, (error, response, body) => {
-            if (error) {
-                reject(error)
-            }
-            resolve(body)
-        })
-    }).catch((error) => console.error(error))
+async function http(options) {
+    console.log(options)
+    try {
+        return await axios(options)
+    } catch (error) {
+        throw new Error(error)
+    }
 }
+
 module.exports = http
