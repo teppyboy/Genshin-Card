@@ -62,10 +62,10 @@ Genshin Impact user info card generator.
 
 #### Run on Repl.it
 
-- Open the url [https://repl.it/@journeyad/Genshin-Card](https://repl.it/@journeyad/Genshin-Card)
-- Just hit the **Fork** button
-- Edit `.env` file to specify the environment variable `COOKIE`, [documentation](https://docs.repl.it/repls/secret-keys)
-- And hit the **Run** button
+-   Open the url [https://repl.it/@journeyad/Genshin-Card](https://repl.it/@journeyad/Genshin-Card)
+-   Just hit the **Fork** button
+-   Edit `.env` file to specify the environment variable `COOKIE`, [documentation](https://docs.repl.it/repls/secret-keys)
+-   And hit the **Run** button
 
 #### Deploying on your own server
 
@@ -80,23 +80,23 @@ $ yarn serve
 
 #### 自建图文指南
 
-- By [BlueSkyXN](https://github.com/BlueSkyXN/Genshin-card)
-- [Genshin-card 原神玩家信息小卡片生成器自建指南](https://www.blueskyxn.com/202102/4008.html)
+-   By [BlueSkyXN](https://github.com/BlueSkyXN/Genshin-card)
+-   [Genshin-card 原神玩家信息小卡片生成器自建指南](https://www.blueskyxn.com/202102/4008.html)
 
 ## Credits
 
-- [repl.it](https://repl.it/)
-- [fontmin](https://github.com/ecomfe/fontmin)
-- [汉仪文黑](https://www.hanyi.com.cn/productdetail.php?id=989&type=0)
-- [miHoYo](https://www.mihoyo.com)
+-   [repl.it](https://repl.it/)
+-   [fontmin](https://github.com/ecomfe/fontmin)
+-   [汉仪文黑](https://www.hanyi.com.cn/productdetail.php?id=989&type=0)
+-   [miHoYo](https://www.mihoyo.com)
 
 ### Artwork Copyright
 
-- [miHoYo](https://www.mihoyo.com)
-- [journey-ad](https://github.com/journey-ad)
-- [V–旅行者](https://bbs.nga.cn/read.php?tid=24827770)
-- [TiMEO](https://www.pixiv.net/artworks/86829113)
-- [みーな](https://www.pixiv.net/artworks/85194788)
+-   [miHoYo](https://www.mihoyo.com)
+-   [journey-ad](https://github.com/journey-ad)
+-   [V–旅行者](https://bbs.nga.cn/read.php?tid=24827770)
+-   [TiMEO](https://www.pixiv.net/artworks/86829113)
+-   [みーな](https://www.pixiv.net/artworks/85194788)
 
 ## License
 
