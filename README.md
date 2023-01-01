@@ -54,7 +54,7 @@ Genshin Impact user info card generator.
 
 ## Demo
 
-[https://genshin-card.getloli.com](https://genshin-card.getloli.com)
+[https://genshin-card.tretrauit.repl.co](https://genshin-card.tretrauit.repl.co)
 
 ## Usage
 
@@ -62,7 +62,7 @@ Genshin Impact user info card generator.
 
 #### Run on Repl.it
 
--   Open the url [https://repl.it/@journeyad/Genshin-Card](https://repl.it/@journeyad/Genshin-Card)
+-   Open the url [https://repl.it/@tretrauit/Genshin-Card](https://repl.it/@tretrauit/Genshin-Card)
 -   Just hit the **Fork** button
 -   Edit `.env` file to specify the environment variable `COOKIE`, [documentation](https://docs.repl.it/repls/secret-keys)
 -   And hit the **Run** button
@@ -89,6 +89,7 @@ $ yarn serve
 -   [fontmin](https://github.com/ecomfe/fontmin)
 -   [汉仪文黑](https://www.hanyi.com.cn/productdetail.php?id=989&type=0)
 -   [miHoYo](https://www.mihoyo.com)
+-   [journey-ad](https://github.com/journey-ad)
 
 ### Artwork Copyright
 
@@ -100,4 +101,4 @@ $ yarn serve
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjourney-ad%2Fgenshin-impact-card.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjourney-ad%2Fgenshin-impact-card?ref=badge_large)
+MIT License
