@@ -7,22 +7,22 @@ pre {
 }
 
 .perview-card {
-    display: flex;
-    align-items: center;
-    height: 165px;
-    margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  height: 165px;
+  margin-bottom: 8px;
 }
 
 .perview-card span {
-    display: block;
-    width: 50px;
-    height: 165px;
-    line-height: 165px;
-    text-align: center;
-    font-size: 24px;
-    color: #fff;
-    background: #3e3e3e;
-    border-radius: 8px 0 0 8px;
+  display: block;
+  width: 50px;
+  height: 165px;
+  line-height: 165px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  background: #3e3e3e;
+  border-radius: 8px 0 0 8px;
 }
 
 @media screen and (max-width: 900px) {

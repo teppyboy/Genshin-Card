@@ -5,6 +5,7 @@
 Genshin Impact user info card generator.
 
 ## Themes
+
 <details>
 <summary>All Themes</summary>
 
@@ -48,9 +49,11 @@ Genshin Impact user info card generator.
 ![](https://genshin-card.getloli.com/detail/37/160596100.png)
 ![](https://genshin-card.getloli.com/detail/38/160596100.png)
 ![](https://genshin-card.getloli.com/detail/39/160596100.png)
+
 </details>
 
 ## Demo
+
 [https://genshin-card.getloli.com](https://genshin-card.getloli.com)
 
 ## Usage
@@ -77,24 +80,23 @@ $ yarn serve
 
 #### 自建图文指南
 
-*   By [BlueSkyXN](https://github.com/BlueSkyXN/Genshin-card)
-*   [Genshin-card 原神玩家信息小卡片生成器自建指南](https://www.blueskyxn.com/202102/4008.html)
-
+- By [BlueSkyXN](https://github.com/BlueSkyXN/Genshin-card)
+- [Genshin-card 原神玩家信息小卡片生成器自建指南](https://www.blueskyxn.com/202102/4008.html)
 
 ## Credits
 
-*   [repl.it](https://repl.it/)
-*   [fontmin](https://github.com/ecomfe/fontmin)
-*   [汉仪文黑](https://www.hanyi.com.cn/productdetail.php?id=989&type=0)
-*   [miHoYo](https://www.mihoyo.com)
+- [repl.it](https://repl.it/)
+- [fontmin](https://github.com/ecomfe/fontmin)
+- [汉仪文黑](https://www.hanyi.com.cn/productdetail.php?id=989&type=0)
+- [miHoYo](https://www.mihoyo.com)
 
 ### Artwork Copyright
 
-*   [miHoYo](https://www.mihoyo.com)
-*   [journey-ad](https://github.com/journey-ad)
-*   [V–旅行者](https://bbs.nga.cn/read.php?tid=24827770)
-*   [TiMEO](https://www.pixiv.net/artworks/86829113)
-*   [みーな](https://www.pixiv.net/artworks/85194788)
+- [miHoYo](https://www.mihoyo.com)
+- [journey-ad](https://github.com/journey-ad)
+- [V–旅行者](https://bbs.nga.cn/read.php?tid=24827770)
+- [TiMEO](https://www.pixiv.net/artworks/86829113)
+- [みーな](https://www.pixiv.net/artworks/85194788)
 
 ## License
 

@@ -1,18 +1,18 @@
-const fs = require('fs')
-const path = require('path')
-const mimeType = require('mime-types')
-const Fontmin = require('fontmin')
-const b2a = require('b3b').b2a
-const NodeCache = require('node-cache')
-const md5 = require('md5')
-const pino = require('pino')
-const util = require('./index')
+const fs = require("fs");
+const path = require("path");
+const mimeType = require("mime-types");
+const Fontmin = require("fontmin");
+const b2a = require("b3b").b2a;
+const NodeCache = require("node-cache");
+const md5 = require("md5");
+const pino = require("pino");
+const util = require("./index");
 
-const skinPath = path.resolve(__dirname, '../assets/skin')
-const woff2Cache = new NodeCache({ stdTTL: 60 * 60 * 24 * 365 })
-const logger = pino({ level: process.env.LOG_LEVEL || 'info' })
+const skinPath = path.resolve(__dirname, "../assets/skin");
+const woff2Cache = new NodeCache({ stdTTL: 60 * 60 * 24 * 365 });
+const logger = pino({ level: process.env.LOG_LEVEL || "info" });
 
-const skinList = {}
+const skinList = {};
 
 const baseGlyph = `
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -20,102 +20,102 @@ abcdefghijklmnopqrstuvwxyz
 1234567890 
 "!\`?'.,;:()[]{}<>|/@\\^$-%+=#_&~*
 活跃天数角色数量成就达成深境螺旋世界探索
-`
+`;
 
-fs.readdirSync(skinPath).forEach(img => {
-  const imgPath = path.resolve(skinPath, img)
-  const name = path.parse(img).name
+fs.readdirSync(skinPath).forEach((img) => {
+  const imgPath = path.resolve(skinPath, img);
+  const name = path.parse(img).name;
 
-  skinList[name] = convertToDatauri(imgPath)
-})
+  skinList[name] = convertToDatauri(imgPath);
+});
 
 function convertToDatauri(path) {
-  const mime = mimeType.lookup(path)
-  const base64 = fs.readFileSync(path).toString('base64')
+  const mime = mimeType.lookup(path);
+  const base64 = fs.readFileSync(path).toString("base64");
 
-  return `data:${mime};base64,${base64}`
+  return `data:${mime};base64,${base64}`;
 }
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function randomArr(arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 function range(start, end) {
-  if (start > end) [end, start] = [start, end]
-  return Array.from(new Array(parseInt(end) + 1).keys()).slice(parseInt(start))
+  if (start > end) [end, start] = [start, end];
+  return Array.from(new Array(parseInt(end) + 1).keys()).slice(parseInt(start));
 }
 
-const txt2woff2 = text => {
-  const key = '__woff2__' + md5(text)
+const txt2woff2 = (text) => {
+  const key = "__woff2__" + md5(text);
 
   return new Promise((resolve, reject) => {
-    let cachedData = woff2Cache.get(key)
+    let cachedData = woff2Cache.get(key);
     if (cachedData) {
-      logger.info('从缓存中获取子集化字体 %s', key)
-      resolve(cachedData)
+      logger.info("从缓存中获取子集化字体 %s", key);
+      resolve(cachedData);
     } else {
       const fontmin = new Fontmin()
-        .src('assets/fonts/HYWenHei-55W.ttf')
-        .use(Fontmin.glyph({
-          text: baseGlyph + text,
-          hinting: false
-        }))
-        .use(Fontmin.ttf2woff({
-          deflate: true
-        }))
+        .src("assets/fonts/HYWenHei-55W.ttf")
+        .use(
+          Fontmin.glyph({
+            text: baseGlyph + text,
+            hinting: false,
+          })
+        )
+        .use(
+          Fontmin.ttf2woff({
+            deflate: true,
+          })
+        );
 
-      fontmin.run(function(err, files) {
+      fontmin.run(function (err, files) {
         if (err) {
-          reject(err)
+          reject(err);
         }
 
-        const woff2 = b2a(files[1].contents)
+        const woff2 = b2a(files[1].contents);
         // console.log(baseGlyph + text)
 
-        woff2Cache.set(key, woff2)
-        resolve(woff2)
-      })
+        woff2Cache.set(key, woff2);
+        resolve(woff2);
+      });
     }
-  })
-}
+  });
+};
 
 const svg = async ({ data, skin = 0, detail = false }) => {
   // '2,5,9' -> [2, 5, 9]
   // '3-5' -> [3, 4, 5]
   // '3-5,7,9,12-15' -> [3, 4, 5, 7, 9, 12, 13, 14, 15]
-  if (skin.includes(',')) {
-    const skinArr = skin.split(',').reduce((arr, cur) => {
+  if (skin.includes(",")) {
+    const skinArr = skin.split(",").reduce((arr, cur) => {
       if (cur) {
-        if (cur.includes('-')) {
-          const [start, end] = cur.split('-')
-          arr = arr.concat(range(start, end))
+        if (cur.includes("-")) {
+          const [start, end] = cur.split("-");
+          arr = arr.concat(range(start, end));
         } else {
-          arr = arr.concat(parseInt(cur))
+          arr = arr.concat(parseInt(cur));
         }
       }
 
-      return arr
-    }, [])
-    skin = randomArr(skinArr)
-
-  } else if (skin.includes('-')) {
-    const [start, end] = skin.split('-')
-    const skinArr = range(start, end)
-    skin = randomArr(skinArr)
-
-  } else if (skin === 'rand') {
-    skin = random(0, Object.keys(skinList).length)
-
+      return arr;
+    }, []);
+    skin = randomArr(skinArr);
+  } else if (skin.includes("-")) {
+    const [start, end] = skin.split("-");
+    const skinArr = range(start, end);
+    skin = randomArr(skinArr);
+  } else if (skin === "rand") {
+    skin = random(0, Object.keys(skinList).length);
   } else if (skin >= Object.keys(skinList).length) {
-    skin = 0
+    skin = 0;
   }
 
-
-  const woff2 = await txt2woff2(data.nickname)
+  const woff2 = await txt2woff2(data.nickname);
 
   return new Promise((resolve, reject) => {
     const tpl = `<?xml version="1.0" encoding="UTF-8"?>
@@ -334,7 +334,7 @@ const svg = async ({ data, skin = 0, detail = false }) => {
                 src: url('data:font/woff2;base64,${woff2}') format('woff2');
               }
             </style>
-              <div class="user-container ${detail ? '' : 'less'}">
+              <div class="user-container ${detail ? "" : "less"}">
                 <div class="top">
                   <div class="user-info">
                     <div class="name-wrap">
@@ -376,10 +376,10 @@ const svg = async ({ data, skin = 0, detail = false }) => {
           </body>
         </foreignObject>
       </svg>
-      `
+      `;
 
-    resolve(util.render(tpl, data))
-  })
-}
+    resolve(util.render(tpl, data));
+  });
+};
 
-module.exports = svg
+module.exports = svg;
