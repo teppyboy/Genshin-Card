@@ -20,34 +20,35 @@ html
     h5 Markdown
     code ![](https://genshin-card.tretrauit.repl.co/{skin}/{hoyolab-id}.svg)
 
-    h3 背景编号
-    h5 <code>rand</code> 随机背景
-    h5 指定随机范围
+    h3 Background number
+    h5 <code>rand</code> to use random background
+    h5 Random from a range
     pre.
       2,5,9 -> [2, 5, 9]
       3-5 -> [3, 4, 5]
       3-5,7,9,12-15 -> [3, 4, 5, 7, 9, 12, 13, 14, 15]
 
-    h3 示例:
+    h3 Preview:
     img(src="https://genshin-card.tretrauit.repl.co/rand/17111457.svg" alt="示例图片")
 
     details
       summary(style='display: inline-block;')
-        h5(style='display: inline-block; cursor: pointer;') 探索度
+        h5(style='display: inline-block; cursor: pointer;') World Exploration
 
-      p 由于配额限制，带有探索度和宝箱数量的图片地址路由使用以下形式：
-      code https://genshin-card.tretrauit.repl.co/detail/{背景编号}/{米游社ID}.png
-      img(src="https://genshin-card.tretrauit.repl.co/detail/42,51-56/17111457.svg" alt="示例图片")
+      p Detailed image is not working for now.
+      //- p 由于配额限制，带有探索度和宝箱数量的图片地址路由使用以下形式：
+      //- code https://genshin-card.tretrauit.repl.co/detail/{背景编号}/{米游社ID}.png
+      //- img(src="https://genshin-card.tretrauit.repl.co/detail/42,51-56/17111457.svg" alt="示例图片")
 
     details
       summary(style='display: inline-block;')
-        h3(style='display: inline-block; cursor: pointer;') 所有背景
-      p(style='margin: 0;') 替换地址中的背景编号为想要的即可（可以右键点击在新标签页打开查看图片地址）
-      p 目前共有<code>0 - 108</code>共 109 张背景图片
+        h3(style='display: inline-block; cursor: pointer;') All backgrounds
+      p(style='margin: 0;') Just replace the background number in the address with whatever you want (you can right-click to open in a new tab to view the image address)
+      p Total<code>0 - 108</code>109 backgrounds
       each _, i in Array(109)
         div(class='perview-card')
           span #{i}
-          img(class='lazy', data-src='https://genshin-card.tretrauit.repl.co/' + i + '/160596100.png')
+          img(class='lazy', data-src='https://genshin-card.tretrauit.repl.co/' + i + '/17111457.svg')
 
     h3 Credits
     ul
@@ -57,6 +58,8 @@ html
         a(href='https://www.hanyi.com.cn/productdetail.php?id=989&type=0', target='_blank', rel='nofollow') 汉仪文黑
       li
         a(href='https://www.mihoyo.com', target='_blank', rel='nofollow') miHoYo
+      li 
+        a(href='https://github.com/journey-ad', target='_blank', rel='nofollow') journey-ad
 
     h3 Artwork Copyright
     ul
@@ -99,7 +102,7 @@ html
         })
 
     p.copyright
-      a(href='https://replit.com/@tretrauit/Genshin-Card', target='_blank') source code
+      a(href='https://github.com/teppyboy/Genshin-Card', target='_blank') source code
 
     script.
       document.addEventListener("DOMContentLoaded", function() {
