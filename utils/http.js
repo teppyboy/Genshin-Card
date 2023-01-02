@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 async function http(options) {
-    console.log(options)
+    // console.log(options)
     try {
         return await axios(options)
     } catch (error) {
