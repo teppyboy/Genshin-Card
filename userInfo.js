@@ -43,7 +43,7 @@ async function getRoleInfo(uid) {
     ).data
     if (rsp.retcode !== 0) {
         logger.error('获取角色ID接口报错')
-        logger.error(rsp.message)
+        // logger.error(rsp.message)
         return
     }
     if (!rsp.data.list || rsp.data.list.length <= 0) {
@@ -115,7 +115,7 @@ async function userInfo({ uid, detail = false }) {
     ).data
     if (resp.retcode !== 0) {
         logger.error('获取角色详情接口报错 %s', resp.message)
-        logger.error(resp)
+        // logger.error(resp)
         return Promise.reject(resp.message)
     }
     const { world_explorations } = resp.data
@@ -140,7 +140,7 @@ async function userInfo({ uid, detail = false }) {
         ...roleInfo,
     }
     cardCache.set(key, data)
-    logger.info(data)
+    // logger.info(data)
     return data
 }
 
