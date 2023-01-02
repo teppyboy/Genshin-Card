@@ -340,7 +340,7 @@ async function svg({ data, skin = 0, detail = false }) {
                   <div class="user-info">
                     <div class="name-wrap">
                       <div class="name">{{nickname}}</div>
-                      <div class="level">Lv.{{level}}</div>
+                      <div class="level">AR {{level}}</div>
                     </div>
                     <div class="uid">UID: {{uid}}</div>
                   </div>
