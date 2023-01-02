@@ -69,7 +69,7 @@ app.get(
 // app.get('/detail/:skin/:uid.png', getPlayerCardDetailed)
 app.get(
     '/detail/:skin/:uid.svg',
-    async (req, res) => await _getPlayerCard(req, res, true, 'svg')
+    async (req, res) => await getPlayerCard(req, res, true, 'svg')
 )
 
 app.get('/heart-beat', (_, res) => {
