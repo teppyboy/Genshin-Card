@@ -1,4 +1,4 @@
-<p align="center"><img src="https://genshin-card.tretrauit.repl.co/75/160596100.svg" alt="genshin-impact-card"></p>
+<p align="center"><img src="https://genshin-card.tretrauit.repl.co/75/17111457.svg" alt="genshin-impact-card"></p>
 
 # genshin-impact-card
 
