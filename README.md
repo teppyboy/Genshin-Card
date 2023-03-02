@@ -1,3 +1,5 @@
+> This is a fork of [journey-ad/genshin-impact-card](https://genshin-card.getloli.com/) for overseas version & improvements
+
 <p align="center"><img src="https://genshin-card.tretrauit.repl.co/75/17111457.svg" alt="genshin-impact-card"></p>
 
 # genshin-impact-card
