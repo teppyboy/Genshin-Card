@@ -1,6 +1,6 @@
-> This is a fork of [journey-ad/genshin-impact-card](https://genshin-card.getloli.com/) for overseas version & improvements
+> **(CN ONLY)** Want to use a working version or host on Vercel yourself? Check out https://github.com/KallkaGo/Genshin-Card :)
 
-<p align="center"><img src="https://genshin-card.tretrauit.repl.co/75/17111457.svg" alt="genshin-impact-card"></p>
+> This is a fork of [journey-ad/genshin-impact-card](https://genshin-card.getloli.com/) for overseas version & improvements
 
 # genshin-impact-card
 
