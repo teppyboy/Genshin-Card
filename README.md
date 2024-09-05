@@ -1,4 +1,9 @@
-> **(CN ONLY)** Want to use a working version or host on Vercel yourself? Check out https://github.com/KallkaGo/Genshin-Card :)
+> Want to use a working version or host on Vercel yourself? Check out https://github.com/KallkaGo/Genshin-Card :)
+> 
+> Hosted instance: https://genshin-card-kallka.vercel.app/ (CN) or https://hoyolabgenshincard.vercel.app/ (EN)
+
+> [!WARNING]
+> Replit killed all 24/7 running methods so my instance won't work anymore, use instances I provided above.
 
 > This is a fork of [journey-ad/genshin-impact-card](https://genshin-card.getloli.com/) for overseas version & improvements
 
