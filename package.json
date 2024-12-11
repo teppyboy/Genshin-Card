@@ -22,7 +22,7 @@
         "node-cache": "^5.1.2",
         "pino": "^6.14.0",
         "pug": "^3.0.2",
-        "sharp": "^0.31.3",
+        "sharp": "^0.32.6",
         "uuid": "^9.0.0"
     },
     "devDependencies": {
